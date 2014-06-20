@@ -69,6 +69,21 @@
 	top: 0;
 	cursor: col-resize;
 	background: #d25211;
+	z-index: 11;
+}
+
+.emmet-re-view__item-ui-resize-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	display: none;
+}
+
+.emmet-re-view_drag .emmet-re-view__item-ui-resize-overlay {
+	display: block;
 }
 
 .emmet-re-view__item-ui-resize:before {
