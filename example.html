@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Re:View Example</title>
+	<link rel="stylesheet" href="./ui/ui.css" />
+	<link rel="stylesheet" href="./example/css/all.css" />
+	<script src="./node_modules/requirejs/require.js"></script>
+</head>
+<body>
+	<div class="emmet-re-view"></div>
+	<script>
+	requirejs(['./lib/breakpoint', './lib/view'], function(breakpoints, view) {
+		var options = {
+			maxWidth: 700
+		};
+		breakpoints.get(function(bp) {
+			console.log('Emmet Re:View received breakpoints', bp);
+			var container = document.querySelector('.emmet-re-view');
+			bp.forEach(function(b) {
+				container.appendChild(view.create('/example/', b, options));
+			});
+		});
+	});
+	</script>
+</body>
+</html>

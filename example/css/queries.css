@@ -1,0 +1,17 @@
+/* For mobile:like samsung grand(480 * 800): */
+@media screen and (max-width:480px) {
+	.get-started-btn { padding: 20px 50px; }
+}
+/* For iphone: */
+@media screen and (max-width:320px) {
+}
+/* For ipad: */
+@media screen and (max-width:760px) {
+}
+@media screen and (max-width:991px) {
+	.download-now { background: #e8b968; background-image: none; }
+	.features-leftcol { border: none; padding: 0 0 0 20px; }
+	.features-rightcol { padding: 0 0 0 20px; }
+	.margin-bottom { margin-bottom: 0; }
+	.features p { margin-bottom: 50px; }
+}
