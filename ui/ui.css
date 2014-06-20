@@ -1,3 +1,6 @@
+@import url(./icons.css);
+@import url(./panel.css);
+
 @font-face {
   font-family: "Flat-UI-Icons";
   src: url('./flat-ui-icons.woff') format('woff');
@@ -17,8 +20,7 @@
 	white-space: nowrap;
 	overflow-x: auto;
 	overflow-y: hidden;
-	background: #eff0f2;
-
+	background: #7f8c8d;
 	font-family: Lato, Helvetica, Arial, sans-serif;
 
 	-webkit-box-sizing: border-box;
@@ -41,6 +43,77 @@
 	margin-left: 50px;
 }
 
+.emmet-re-view__item-ui {
+	position: absolute;
+	display: inline-block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s;
+	-moz-transition: opacity 0.3s;
+	-ms-transition: opacity 0.3s;
+	-o-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.emmet-re-view__item:hover .emmet-re-view__item-ui {
+	opacity: 1;
+}
+
+.emmet-re-view__item-ui-resize {
+	position: absolute;
+	width: 7px;
+	height: 100%;
+	right: -7px;
+	top: 0;
+	cursor: col-resize;
+	background: #d25211;
+}
+
+.emmet-re-view__item-ui-resize:before {
+	content: '. . .';
+	font-size: 15px;
+	font-family: arial, sans-serif;
+	font-weight: bold;
+	color: #fff;
+	display: block;
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 0px;
+	line-height: 0.6;
+	white-space: normal;
+	text-align: center;
+	margin-top: -0.9em;
+}
+
+.emmet-re-view__item-ui-top {
+	position: absolute;
+	right: 0;
+	bottom: 100%;
+	padding-bottom: 10px;
+	width: 100%;
+	font-size: 16px;
+	text-align: right;
+	color: #95a5a6;
+}
+
+.emmet-re-view__item-ui-top .emmet-re-view__icon {
+	cursor: pointer;
+}
+
+.emmet-re-view__item-ui-label {
+	position: absolute;
+	display: block;
+	top: 100%;
+	font-size: 12px;
+	padding-top: 7px;
+	width: 100%;
+	text-align: center;
+	color: #bdc3c7;
+}
+
 .emmet-re-view-iframe {
 	border: none;
 	position: absolute;
@@ -54,19 +127,50 @@
 	transform-origin: 0 0;
 }
 
-.emmet-re-view__panel {
-	position: fixed;
-	width: 100%;
-	left: 0;
-	bottom: 0;
-	background: #344a5d;
-	color: #fff;
-	padding: 20px;
+.emmet-re-view__button {
+	padding: 10px 19px;
 	font-size: 13px;
-	font-weight: bold;
-
+	border-radius: 6px;
+	color: #fff;
+	background: #20a085;
+	border: 0;
+	cursor: pointer;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+}
 
+.emmet-re-view__button:hover {
+	background: #26bb9d;
+}
+
+.emmet-re-view__button[data-action="reset"] {
+	color: #bdc3c7;
+	background: none;
+	border: 2px solid #bdc3c7;
+	padding: 8px 17px;
+}
+
+.emmet-re-view__button[data-action="reset"]:hover {
+	background: none;
+	border-color: #ecf0f1;
+	color: #ecf0f1;
+}
+
+.emmet-re-view__input {
+	background: none;
+	padding: 8px 17px;
+	border: 2px solid #ecf0f1;
+	color: #ecf0f1;
+	font-size: 13px;
+	border-radius: 6px;
+	margin: -10px 5px;
+}
+
+.emmet-re-view__input:focus {
+	outline: none;
+}
+
+.emmet-re-view__input[type="number"] {
+	padding-right: 8px;
 }

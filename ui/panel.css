@@ -1,0 +1,51 @@
+#emr-max-width {
+	width: 4em;
+}
+
+.emmet-re-view__panel {
+	position: fixed;
+	line-height: 1.4;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	background: #34495e;
+	color: #fff;
+	padding: 0 10px;
+	font-size: 13px;
+	font-weight: bold;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.emmet-re-view__panel {
+	display: flex;
+	justify-content: space-between;
+}
+
+.emmet-re-view__panel-option {
+	padding: 20px 10px;
+	display: inline-block;
+}
+
+.emmet-re-view__panel .emmet-re-view__button {
+	margin-top: -10px;
+	margin-bottom: -10px;
+}
+
+.emmet-re-view__panel input[type="checkbox"] {
+	opacity: 0;
+}
+
+.emmet-re-view__panel input[type="checkbox"]:focus + .emmet-re-view__icon {
+	color: #26bb9d;
+}
+
+.emmet-re-view__panel .emmet-re-view__icon[data-icon="checkbox"] {
+	position: absolute;
+	font-size: 15px;
+	margin-left: -18px;
+	margin-top: -1px;
+	color: #20a085;
+}

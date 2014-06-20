@@ -8,7 +8,15 @@
 </head>
 <body>
 	<div class="emmet-re-view">
-		<div class="emmet-re-view__item"></div>
+		<div class="emmet-re-view__item">
+			<div class="emmet-re-view__item-ui">
+				<div class="emmet-re-view__item-ui-top">
+					<i class="emmet-re-view__icon" data-icon="cross" data-action="close-view" title="Close view"></i>
+				</div>
+				<div class="emmet-re-view__item-ui-resize"></div>
+			</div>
+			<span class="emmet-re-view__item-ui-label">min 300px, max 500px</span>
+		</div>
 		<div class="emmet-re-view__item"></div>
 		<div class="emmet-re-view__item"></div>
 		<div class="emmet-re-view__item"></div>
@@ -16,10 +24,24 @@
 		<div class="emmet-re-view__item"></div>
 
 		<div class="emmet-re-view__panel">
-			<div class="emmet-re-view__panel-option">
-				<input type="checkbox" name="max-width-enabled" />
-				<label for="max-width-enabled">Max Width</label>
-				<input type="text" name="max-width" value="700" />
+			<div class="emmet-re-view__panel-section">
+				<div class="emmet-re-view__panel-option">
+					<input type="checkbox" name="max-width-enabled" id="emr-max-width-enabled" /><i class="emmet-re-view__icon" data-icon="checkbox"></i>
+					<label for="emr-max-width-enabled">Max Viewport Width</label>
+					<input type="number" name="max-width" id="emr-max-width" value="700" min="200" max="2000" size="4" maxlength="4" class="emmet-re-view__input" />
+				</div>
+				<div class="emmet-re-view__panel-option">
+					<input type="checkbox" name="sync-scroll" id="emr-sync-scroll" class="emmet-re-view__checkbox" /><i class="emmet-re-view__icon" data-icon="checkbox"></i>
+					<label for="emr-sync-scroll">Sync scrolling</label>
+				</div>
+			</div>
+			<div class="emmet-re-view__panel-section">
+				<div class="emmet-re-view__panel-option">
+					<button class="emmet-re-view__button" data-action="reset">Reset</button>
+				</div>
+				<div class="emmet-re-view__panel-option">
+					<button class="emmet-re-view__button" data-action="copy-url">Copy URL</button>
+				</div>
 			</div>
 		</div>
 	</div>

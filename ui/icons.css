@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Flat-UI-Icons";
+  src: url('./flat-ui-icons.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.emmet-re-view__icon {
+	display: inline-block;
+	font-family: 'Flat-UI-Icons';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	font-style: normal;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.emmet-re-view__icon[data-icon="checkbox"]:before {
+	content: "\e033";
+}
+
+input:checked + .emmet-re-view__icon[data-icon="checkbox"]:before {
+	content: "\e034";
+}
+
+.emmet-re-view__icon[data-icon="cross"]:before {
+	content: "\e00b";
+}
+
+.emmet-re-view__icon[data-icon="circle"]:before {
+	content: "\e02b";
+}
