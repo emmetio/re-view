@@ -1,13 +1,6 @@
 @import url(./icons.css);
 @import url(./panel.css);
 
-@font-face {
-  font-family: "Flat-UI-Icons";
-  src: url('./flat-ui-icons.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .emmet-re-view {
 	position: fixed;
 	left: 0;

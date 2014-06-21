@@ -16,10 +16,7 @@
 		};
 		breakpoints.get(function(bp) {
 			console.log('Emmet Re:View received breakpoints', bp);
-			var container = document.querySelector('.emmet-re-view');
-			bp.forEach(function(b) {
-				container.appendChild(view.create('/example/', b, options));
-			});
+			view.init('/example/', bp, '.emmet-re-view');
 		});
 	});
 	</script>
