@@ -5,18 +5,14 @@
 	"manifest_version": 2,
 	"permissions" : [
 		"activeTab",
+		"storage",
 		"http://*/*",
 		"https://*/*"
 	],
-	"content_scripts": [{
-		"css": ["./ui.css"],
-		"matches": ["http://*/*", "https://*/*", "file://*/*"]
-	}],
-
 	"browser_action": {
 		"default_title": "Show breakpoint views"
 	},
 	"background": {
-		"scripts": ["chrome-background.js"]
+		"scripts": ["background.js"]
 	}
 }

@@ -11,10 +11,10 @@ gulp.task('default', function() {
 		.pipe(minifyCss({processImport: true}))
 		.pipe(gulp.dest('out/'));
 
-	gulp.src(['./manifest.json'])
+	gulp.src(['./lib/chrome/manifest.json'])
         .pipe(gulp.dest('./out'));
 
-	return gulp.src(['./lib/chrome-app.js', './lib/chrome-background.js'])
+	return gulp.src(['./lib/chrome/app.js', './lib/chrome/background.js'])
 		.pipe(browserify({
           insertGlobals : false,
           debug : false
