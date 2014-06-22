@@ -9,7 +9,7 @@
 	padding: 50px 0 100px 50px;
 	height: 100%;
 	width: 100%;
-	z-index: 9999;
+	z-index: 9998;
 	white-space: nowrap;
 	overflow-x: auto;
 	overflow-y: hidden;
@@ -138,11 +138,14 @@
 .emmet-re-view__button {
 	padding: 10px 19px;
 	font-size: 13px;
+	font-weight: normal;
 	border-radius: 6px;
 	color: #fff;
 	background: #20a085;
 	border: 0;
 	cursor: pointer;
+	display: inline !important;
+	font-family: Lato, Helvetica, Arial, sans-serif;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -177,6 +180,9 @@
 	font-size: 13px;
 	border-radius: 6px;
 	margin: -10px 5px;
+	display: inline !important;
+	font-family: Lato, Helvetica, Arial, sans-serif;
+	font-weight: normal;
 }
 
 .emmet-re-view__input:focus {
@@ -185,4 +191,11 @@
 
 .emmet-re-view__input[type="number"] {
 	padding-right: 8px;
+}
+
+.emmet-re-view__label {
+	display: inline !important;
+	font-family: Lato, Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	font-weight: normal;
 }
