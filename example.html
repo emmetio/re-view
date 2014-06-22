@@ -9,21 +9,7 @@
 </head>
 <body>
 	<script>
-	requirejs(['./lib/breakpoint', './lib/view', './lib/ui', './lib/event'], function(breakpoints, view, ui, event) {
-		var container = ui.create();
-		var options = {
-			maxWidth: 700
-		};
-		breakpoints.get(function(bp) {
-			console.log('Emmet Re:View received breakpoints', bp);
-			view.init('/example/', bp, container);
-		});
-		document.body.appendChild(container);
-
-		event.on('all', function() {
-			console.log('evt', arguments);
-		})
-	});
+	requirejs(['./lib/sample-app']);
 	</script>
 </body>
 </html>
