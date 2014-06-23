@@ -50,3 +50,15 @@
 	margin-top: -1px;
 	color: #20a085;
 }
+
+.emmet-re-view__panel-option-comment {
+	font-size: 0.8em;
+	opacity: 0.3;
+	display: inline-block;
+	width: 20em;
+	white-space: normal;
+	margin: -1em 0;
+	vertical-align: middle;
+	position: relative;
+	top: -0.2em;
+}

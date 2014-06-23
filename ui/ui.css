@@ -1,4 +1,4 @@
-@import url('http://fonts.googleapis.com/css?family=Lato');
+/* @import url('http://fonts.googleapis.com/css?family=Lato'); */
 @import url(./icons.css);
 @import url(./panel.css);
 
@@ -153,6 +153,10 @@
 
 .emmet-re-view__button:hover {
 	background: #26bb9d;
+}
+
+.emmet-re-view__button:active {
+	background: #2ad0af;
 }
 
 .emmet-re-view__button:focus {
