@@ -1,0 +1,165 @@
+@import url('http://fonts.googleapis.com/css?family=Lato');
+
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: Lato, Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	line-height: 1.72222;
+	color: #34495e;
+	background-color: #ffffff;
+}
+
+h1 {
+	font: 900 50px/60px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	letter-spacing: -2px;
+	text-align: center;
+	margin: 0 0 1em;
+}
+
+h2 {
+	font-size: 53px;
+	margin-top: 0;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+.main-content {
+	padding: 0 20px;
+}
+
+.text-block	{
+	padding: 20px 0;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.preview {
+	height: 700px;
+	background: #7f8c8d;
+	margin: 0 -20px;
+}
+
+.comment {
+	font-size: 0.8em;
+	color: #95a5a6;
+}
+
+.actions {
+	text-align: center;
+	font-size: 1.2em;
+	margin: 50px 0;
+}
+
+.btn {
+	padding: 0.5em 0.8em;
+	font-size: 1em;
+	line-height: 1.471;
+	border-radius: 6px;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.btn-download {
+	color: #ffffff;
+	background-color: #3498db;
+}
+
+.btn-download:hover {
+	background: #2980b9;
+}
+
+.source-code {
+	font-size: 14px;
+	margin-top: 0.5em;
+	color: #bdc3c7;
+}
+
+.source-code a {
+	color: inherit;
+}
+
+.source-code a:hover {
+	color: #3498db;
+}
+
+footer {
+	margin: 0 -20px;
+	padding: 0 20px;
+	background-color: #edeff1;
+	color: #bac1c8;
+	font-size: 14px;
+}
+
+footer a {
+	color: #9aa4af;
+}
+
+footer a:hover {
+	color: #16a085;
+}
+
+footer p {
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+
+.site-name {
+	padding-bottom: 9px;
+}
+
+.site-name__title {
+	color: #95a5a6;
+	line-height: 1;
+	font-weight: 700;
+	font-size: 3em;
+	margin: 0;
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.site-name__title a {
+	display: inline;
+	text-decoration: none;
+}
+
+.site-name__caption {
+	margin: 0;
+	font-family: georgia, serif;
+	font-size: .8em;
+	font-style: italic;
+	padding-top: 1px;
+	padding-bottom: 9px;
+}
+
+@media screen and (min-width: 500px) {
+	h1 {
+		font-size: 80px;
+		line-height: 90px;
+	}
+
+	.main-content {
+		padding: 0 50px;
+	}
+
+	.text-block	{
+		padding: 50px 0;
+	}
+
+	.actions {
+		font-size: 1.6em;
+	}
+
+	.preview {
+		margin: 0 -50px;
+	}
+
+	footer {
+		margin: 0 -50px;
+		padding: 0 50px;
+	}
+}
