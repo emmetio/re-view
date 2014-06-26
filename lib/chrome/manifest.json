@@ -6,11 +6,21 @@
 	"permissions" : [
 		"activeTab",
 		"storage",
+		"clipboardWrite",
 		"http://*/*",
 		"https://*/*"
 	],
+	"icons": {
+		"16": "16x16.png",
+		"48": "48x48.png",
+		"128": "128x128.png"
+	},
 	"browser_action": {
-		"default_title": "Show breakpoint views"
+		"default_title": "Emmet Re:View",
+		"default_icon": {
+			"19": "19x19.png",
+			"38": "38x38.png"
+		}
 	},
 	"background": {
 		"scripts": ["background.js"]

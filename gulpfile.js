@@ -11,7 +11,7 @@ gulp.task('default', function() {
 		.pipe(minifyCss({processImport: true}))
 		.pipe(gulp.dest('out/'));
 
-	gulp.src(['./lib/chrome/manifest.json'])
+	gulp.src(['./lib/chrome/manifest.json', './lib/chrome/*.png'])
         .pipe(gulp.dest('./out'));
 
 	return gulp.src(['./lib/chrome/app.js', './lib/chrome/background.js'])
