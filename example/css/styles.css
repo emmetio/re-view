@@ -297,5 +297,5 @@ Animations
 /* ==========================================================================
 Waypoints
 ========================================================================== */
-.wp1, .wp2, .wp3, .wp4, .wp5, .wp6 { visibility: hidden; }
+/* .wp1, .wp2, .wp3, .wp4, .wp5, .wp6 { visibility: hidden; } */
 .bounceInLeft, .bounceInRight, .fadeInUp, .fadeInUpDelay, .fadeInDown, .fadeInUpD { visibility: visible; }

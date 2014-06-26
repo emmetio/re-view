@@ -1,4 +1,5 @@
 @import url('http://fonts.googleapis.com/css?family=Lato');
+@import url(./ui/ui.css);
 
 html, body {
 	padding: 0;
@@ -16,7 +17,7 @@ body {
 h1 {
 	font: 900 50px/60px "Helvetica Neue", Helvetica, Arial, sans-serif;
 	letter-spacing: -2px;
-	text-align: center;
+	/* text-align: center; */
 	margin: 0 0 1em;
 }
 
@@ -29,6 +30,15 @@ p:last-child {
 	margin-bottom: 0;
 }
 
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+	margin-bottom: 0.5em;
+}
+
 .main-content {
 	padding: 0 20px;
 }
@@ -39,21 +49,63 @@ p:last-child {
 	margin: 0 auto;
 }
 
+.project-logo {
+	position: absolute;
+	margin-left: -120px;
+	margin-top: -4px;
+}
+
 .preview {
 	height: 700px;
 	background: #7f8c8d;
 	margin: 0 -20px;
+	overflow: auto;
+	position: relative;
+}
+
+.preview__comment {
+	position: absolute;
+	bottom: 10px;
+	z-index: 2;
+	font-size: 12px;
+	width: 100%;
+	text-align: center;
+	margin: 0;
+}
+
+.preview__comment a {
+	color: inherit;
+}
+
+.preview__comment a:hover {
+	color: #ecf0f1;
+}
+
+.preview .emmet-re-view {
+	position: relative;
+	padding: 50px 0 70px;
+	z-index: 1;
+}
+
+.preview .emmet-re-view__panel {
+	position: absolute;
+}
+
+.preview .emmet-re-view__item-ui-label {
+	display: none;
 }
 
 .comment {
 	font-size: 0.8em;
 	color: #95a5a6;
+	display: block;
+	line-height: 1.2;
 }
 
 .actions {
 	text-align: center;
 	font-size: 1.2em;
-	margin: 50px 0;
+	margin: 50px 0 0;
 }
 
 .btn {
@@ -161,5 +213,11 @@ footer p {
 	footer {
 		margin: 0 -50px;
 		padding: 0 50px;
+	}
+}
+
+@media screen and (max-width: 860px) {
+	.project-logo {
+		display: none;
 	}
 }

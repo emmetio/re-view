@@ -9,11 +9,26 @@
 <body>
 	<div class="main-content">
 		<section class="text-block">
-			<h1>Emmet Re:View</h1>
+			<h1>
+				<svg width="100px" height="100px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" class="project-logo">
+					<defs>
+						<linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="emr-grd">
+							<stop stop-color="#26BB9D" offset="0%" />
+							<stop stop-color="#20A085" offset="100%" />
+						</linearGradient>
+					</defs>
+					<rect stroke="#979797" fill="#344A5D" x="0" y="0" width="256" height="256" rx="20" />
+					<rect stroke="#FFFFFF" stroke-width="4" fill="url(#emr-grd)" x="20" y="20" width="80" height="216" rx="8" />
+					<rect stroke="#FFFFFF" stroke-width="4" fill="url(#emr-grd)" x="120" y="20" width="116" height="216" rx="8" />
+				</svg>
+				Emmet Re:View
+			</h1>
 			<p>Emmet Re:View is a small Google Chrome extension that finds responsive design breakpoints on your page and creates view for each breakpoint, like this:</p>
 		</section>
 
-		<div class="preview"></div>
+		<div class="preview">
+			<p class="preview__comment">Demo: <a href="http://peterfinlan.com/starnight/">Starnight</a></p>
+		</div>
 
 		<section class="text-block">
 			<h2>Features:</h2>
@@ -21,8 +36,8 @@
 				<li>Preview all responsive design breakpoints on a single page.</li>
 				<li>Sync scrolling.</li>
 				<li>Automatic viewport scaling for large views.</li>
-				<li>Manual viewport scaling for fine-tuning previews <span class="comment">(double-click on resize handler to restore original size)</span>.</li>
-				<li>Online sharing of previews: show your collegues and clients how your web-site looks on different viewport width.</li>
+				<li>Manual viewport scaling for fine-tuning previews. <span class="comment">Double-click on resize handler to restore original size</span></li>
+				<li>Online sharing of previews: show your collegues and clients how your web-site looks on different viewport widths.</li>
 				<li>Completely free and open-source!</li>
 			</ul>
 			
@@ -43,9 +58,8 @@
 				<p>Support: <a href="mailto:info@emmet.io">info@emmet.io</a> or <a href="https://github.com/emmetio/re-view/issues">fill an issue</a> (recommended).</p>
 				<p>Theme: <a href="http://designmodo.github.io/Flat-UI/">Flat UI</a></p>
 			</section>
-
 		</footer>
-
 	</div>
+	<script src="./node_modules/requirejs/require.js" data-main="./lib/online-app"></script>
 </body>
 </html>
