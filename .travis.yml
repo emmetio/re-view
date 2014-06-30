@@ -10,5 +10,5 @@ branches:
   only:
   - master
 after_success:
-- apt-get install sshpass
+- sudo apt-get install sshpass
 - sshpass -p $DEPLOY_PASSWORD scp -oStrictHostKeyChecking=no -r ./out/web $DEPLOY_USER@emmet.io:$DEPLOY_PATH
