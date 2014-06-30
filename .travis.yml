@@ -6,6 +6,7 @@ env:
   - secure: PbVqot8Sxfn+2nxkUvV8p1KRSWNACLvu3ec+eg5bYGAXbrx3Gx1FzfGh5jWmmD5E12f+FGM5RAyHUvKxq5xT6YQctkphfnmHUSYyyF+JYZGSy7S6czkiyTEKA/Cv5OC8lVispffNl2bDdLg/VUZxywqlxUymchjy2gFiI+Gev6A=
   - secure: dzorcw29qIlRvCk0rUaf5uQfAgEqHSjYB6NcF10ZvgdjhFlQiVOhAeJSfeZDYf3/4bf/stPXDLgF/pgokMXaUr8WDRJyX3tNkWv8l9G8PKfstd0xdOvIDaw6JfKENUz29tQRWbCSW4rShtzFn4WHoae0Va24frNDB8RFGTOdzTA=
   - secure: c2SqjZ96YdlBx1EzFxNyDKRtrcL7Rd+nZNH6sS8QsV2jx2m6/0ZH1TE+Z/4Xjj8aBKzVwbh3G0VxsbQpzzNZyY+0a5/zNeYMdcFx4SAWWk5BxxVCI+GuQLhAY5GAMKAEYEpfMmmj21a/MaXc6VXF51X6LPpo3/OChwY6JDlmeAw=
+script: "./node_modules/.bin/gulp"
 branches:
   only:
   - master
