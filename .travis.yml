@@ -9,4 +9,4 @@ branches:
   only:
     - master
 after_success:
-  "scp -oStrictHostKeyChecking=no -r ./out/web $DEPLOY_USER@emmet.io:$DEPLOY_PATH"
+  "scp -oStrictHostKeyChecking=no -i .travis/deploy_key.pem -r ./out/web $DEPLOY_USER@emmet.io:$DEPLOY_PATH"
