@@ -10,7 +10,6 @@ var replace = require('gulp-replace');
 var uglify = require('gulp-uglify');
 var gzip = require('gulp-gzip');
 var del = require('del');
-var merge = require('merge-stream');
 
 var output = {
 	chrome: './out/chrome',
@@ -21,73 +20,74 @@ function getCRC(filename) {
 	return crc.crc32(fs.readFileSync(path.join(output.website, filename), {encoding: 'utf8'}));
 }
 
-function gzipRes(dest) {
-	var out = Array.prototype.slice.call(arguments, 1).map(function(stream) {
-		return stream.pipe(gulp.dest(dest))
-			.pipe(gzip())
-			.pipe(gulp.dest(dest));
-	});
-
-	return merge.apply(null, out);
-}
-
 gulp.task('watch', function() {
 	gulp.watch(['lib/**/*.{js,css}'], ['default']);
 });
 
-gulp.task('chrome-compile', function() {
-	del.sync([output.chrome]);
-	
-	var css = gulp.src('./ui/ui.css')
+gulp.task('chrome-clean', function(cb) {
+	return del([output.chrome], cb);
+});
+
+gulp.task('chrome-css', ['chrome-clean'], function() {
+	return gulp.src('./ui/ui.css')
 		.pipe(minifyCss({processImport: true}))
 		.pipe(gulp.dest(output.chrome));
+});
 
-	var js = gulp.src(['./lib/chrome/app.js', './lib/chrome/background.js'])
+gulp.task('chrome-js', ['chrome-clean'], function() {
+	return gulp.src(['./lib/chrome/app.js', './lib/chrome/background.js'])
 		.pipe(browserify({
 			insertGlobals : false,
 			debug : false
 		}))
 		.pipe(gulp.dest(output.chrome));
+});
 
-	var misc = gulp.src(['./lib/chrome/manifest.json', './lib/chrome/*.png'])
+gulp.task('chrome-misc', ['chrome-clean'], function() {
+	return gulp.src(['./lib/chrome/manifest.json', './lib/chrome/*.png'])
 		.pipe(gulp.dest(output.chrome));
-
-	return merge(css, js, misc);
 });
 
-gulp.task('website-resources', function() {
-	del.sync([output.website]);
-
-	var css = gulp.src('./style.css')
-		.pipe(minifyCss({processImport: true}));
-
-	var js = gulp.src(['./lib/online-app.js'])
-		.pipe(browserify({
-			insertGlobals : false,
-			debug : false
-		}))
-		.pipe(uglify());
-
-	return gzipRes(output.website, css, js);
-});
-
-gulp.task('website', ['website-resources'], function() {
-	// calculate crc32 of static files
-	var css = getCRC('style.css');
-	var js  = getCRC('online-app.js');
-
-	var html = gulp.src('index.html')
-		.pipe(replace('<link rel="stylesheet" href="style.css" />', '<link rel="stylesheet" href="/-/' + css + '/style.css" />'))
-		.pipe(replace('<script src="./node_modules/requirejs/require.js" data-main="./lib/online-app"></script>', '<script src="/-/' + js + '/online-app.js"></script>'))
-		.pipe(gulp.dest(output.website));
-
-	return html;
-});
-
-gulp.task('chrome', ['chrome-compile'], function() {
+gulp.task('chrome', ['chrome-clean', 'chrome-css', 'chrome-js', 'chrome-misc'], function() {
 	return gulp.src(['*.*'], {cwd: output.chrome})
 		.pipe(zip('chrome.zip'))
 		.pipe(gulp.dest(output.chrome));
+});
+
+gulp.task('website-clean', function(cb) {
+	del([output.website], cb);
+});
+
+gulp.task('website-css', ['website-clean'], function() {
+	return gulp.src('./style.css')
+		.pipe(minifyCss({processImport: true}))
+		.pipe(gulp.dest(output.website));
+});
+
+gulp.task('website-js', ['website-clean'], function() {
+	return gulp.src(['./lib/online-app.js'])
+		.pipe(browserify({
+			insertGlobals : false,
+			debug : false
+		}))
+		.pipe(uglify())
+		.pipe(gulp.dest(output.website));
+});
+
+gulp.task('website-html', ['website-css', 'website-js'], function() {
+	var css = getCRC('style.css');
+	var js  = getCRC('online-app.js');
+
+	return gulp.src('index.html')
+		.pipe(replace('<link rel="stylesheet" href="style.css" />', '<link rel="stylesheet" href="/-/' + css + '/style.css" />'))
+		.pipe(replace('<script src="./node_modules/requirejs/require.js" data-main="./lib/online-app"></script>', '<script src="/-/' + js + '/online-app.js"></script>'))
+		.pipe(gulp.dest(output.website));
+});
+
+gulp.task('website', ['website-clean', 'website-html'], function() {
+	return gulp.src(['*.{css,js,html}'], {cwd: output.website})
+		.pipe(gzip())
+		.pipe(gulp.dest(output.website));
 });
 
 gulp.task('default', ['chrome', 'website']);
