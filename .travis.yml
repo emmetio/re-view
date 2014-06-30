@@ -9,4 +9,6 @@ branches:
   only:
     - master
 after_success:
-  "scp -oStrictHostKeyChecking=no -i .travis/deploy_key.pem -r ./out/web $DEPLOY_USER@emmet.io:$DEPLOY_PATH"
+  - chmod 600 .travis/deploy_key.pem
+  - ssh-add .travis/deploy_key.pem
+  - scp -oStrictHostKeyChecking=no -i .travis/deploy_key.pem -r ./out/web $DEPLOY_USER@emmet.io:$DEPLOY_PATH
