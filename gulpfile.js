@@ -96,7 +96,7 @@ gulp.task('website-example', function() {
 });
 
 gulp.task('website', ['website-clean', 'website-html', 'website-static', 'website-example'], function() {
-	return gulp.src(['*.{css,js,html}'], {cwd: output.website})
+	return gulp.src(['*.{css,js,html,ico}'], {cwd: output.website})
 		.pipe(gzip())
 		.pipe(gulp.dest(output.website));
 });
