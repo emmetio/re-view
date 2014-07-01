@@ -55,7 +55,8 @@ gulp.task('chrome', ['chrome-clean', 'chrome-css', 'chrome-js', 'chrome-misc'], 
 });
 
 gulp.task('website-clean', function(cb) {
-	del([output.website], cb);
+	del.sync([output.website]);
+	cb();
 });
 
 gulp.task('website-css', ['website-clean'], function() {
@@ -84,7 +85,17 @@ gulp.task('website-html', ['website-css', 'website-js'], function() {
 		.pipe(gulp.dest(output.website));
 });
 
-gulp.task('website', ['website-clean', 'website-html'], function() {
+gulp.task('website-static', function() {
+	return gulp.src(['favicon.ico'])
+		.pipe(gulp.dest(output.website));
+});
+
+gulp.task('website-example', function() {
+	return gulp.src(['example/**/*.*'])
+		.pipe(gulp.dest(path.join(output.website, 'example')));
+});
+
+gulp.task('website', ['website-clean', 'website-html', 'website-static', 'website-example'], function() {
 	return gulp.src(['*.{css,js,html}'], {cwd: output.website})
 		.pipe(gzip())
 		.pipe(gulp.dest(output.website));
