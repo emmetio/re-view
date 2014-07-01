@@ -65,12 +65,18 @@ ul li {
 
 .preview__comment {
 	position: absolute;
-	bottom: 10px;
+	bottom: 20px;
 	z-index: 2;
 	font-size: 12px;
-	width: 100%;
+	/* width: 100%; */
 	text-align: center;
 	margin: 0;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
 }
 
 .preview__comment a {

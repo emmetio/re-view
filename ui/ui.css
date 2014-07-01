@@ -42,16 +42,6 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	opacity: 0;
-	-webkit-transition: opacity 0.3s;
-	-moz-transition: opacity 0.3s;
-	-ms-transition: opacity 0.3s;
-	-o-transition: opacity 0.3s;
-	transition: opacity 0.3s;
-}
-
-.emmet-re-view__item:hover .emmet-re-view__item-ui {
-	opacity: 1;
 }
 
 .emmet-re-view__item-ui-resize {
@@ -109,6 +99,22 @@
 
 .emmet-re-view__item-ui-top .emmet-re-view__icon {
 	cursor: pointer;
+}
+
+.emmet-re-view__item-ui-resize,
+.emmet-re-view__item-ui-top {
+	z-index: 2;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s;
+	-moz-transition: opacity 0.3s;
+	-ms-transition: opacity 0.3s;
+	-o-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.emmet-re-view__item:hover .emmet-re-view__item-ui-resize,
+.emmet-re-view__item:hover .emmet-re-view__item-ui-top {
+	opacity: 1;
 }
 
 .emmet-re-view__item-ui-label {

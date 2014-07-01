@@ -25,7 +25,8 @@ gulp.task('watch', function() {
 });
 
 gulp.task('chrome-clean', function(cb) {
-	return del([output.chrome], cb);
+	del.sync([output.chrome]);
+	cb();
 });
 
 gulp.task('chrome-css', ['chrome-clean'], function() {

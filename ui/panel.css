@@ -14,15 +14,19 @@
 	font-size: 13px;
 	font-weight: bold;
 	z-index: 9999;
+	overflow: hidden;
 
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
-.emmet-re-view__panel {
-	display: flex;
-	justify-content: space-between;
+.emmet-re-view__panel-section {
+	float: right;
+}
+
+.emmet-re-view__panel-section:first-child {
+	float: left;
 }
 
 .emmet-re-view__panel-option {
@@ -52,8 +56,8 @@
 }
 
 .emmet-re-view__panel-option-comment {
-	font-size: 0.8em;
-	opacity: 0.3;
+	font-size: 11px;
+	color: #707f8e;
 	display: inline-block;
 	width: 20em;
 	white-space: normal;
@@ -61,4 +65,5 @@
 	vertical-align: middle;
 	position: relative;
 	top: -0.2em;
+	-webkit-font-smoothing: antialiased;
 }
