@@ -5,24 +5,35 @@
 	<title>Re:View UI</title>
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato" />
 	<!-- <link rel="stylesheet" href="./ui.css" /> -->
-	<link rel="stylesheet" href="../out/ui.css" />
+	<link rel="stylesheet" href="./ui.css" />
 </head>
 <body>
 	<div class="emmet-re-view">
-		<div class="emmet-re-view__item">
-			<div class="emmet-re-view__item-ui">
-				<div class="emmet-re-view__item-ui-top">
-					<i class="emmet-re-view__icon" data-icon="cross" data-action="close-view" title="Close view"></i>
+		<div class="emmet-re-view__scroller">
+			<div class="emmet-re-view__item">
+				<div class="emmet-re-view__item-ui">
+					<div class="emmet-re-view__item-ui-top">
+						<i class="emmet-re-view__icon" data-icon="cross" data-action="close-view" title="Close view"></i>
+					</div>
+					<div class="emmet-re-view__item-ui-resize"></div>
 				</div>
-				<div class="emmet-re-view__item-ui-resize"></div>
+				<span class="emmet-re-view__item-ui-label">min 300px, max 500px</span>
 			</div>
-			<span class="emmet-re-view__item-ui-label">min 300px, max 500px</span>
+			<div class="emmet-re-view__item"></div>
+			<div class="emmet-re-view__item"></div>
+			<div class="emmet-re-view__item"></div>
+			<div class="emmet-re-view__item"></div>
+			<div class="emmet-re-view__item"></div>
+			<div class="emmet-re-view__item">
+				<div class="emmet-re-view__item-ui">
+					<div class="emmet-re-view__item-ui-top">
+						<i class="emmet-re-view__icon" data-icon="cross" data-action="close-view" title="Close view"></i>
+					</div>
+					<div class="emmet-re-view__item-ui-resize"></div>
+				</div>
+				<span class="emmet-re-view__item-ui-label">min 300px, max 500px</span>
+			</div>
 		</div>
-		<div class="emmet-re-view__item"></div>
-		<div class="emmet-re-view__item"></div>
-		<div class="emmet-re-view__item"></div>
-		<div class="emmet-re-view__item"></div>
-		<div class="emmet-re-view__item"></div>
 
 		<div class="emmet-re-view__panel">
 			<div class="emmet-re-view__panel-section">
@@ -34,6 +45,11 @@
 				<div class="emmet-re-view__panel-option">
 					<input type="checkbox" name="sync-scroll" id="emr-sync-scroll" class="emmet-re-view__checkbox" /><i class="emmet-re-view__icon" data-icon="checkbox"></i>
 					<label for="emr-sync-scroll">Sync scrolling</label>
+				</div>
+
+				<div class="emmet-re-view__panel-option">
+					<input type="checkbox" name="sync-scroll" id="emr-sync-scroll" class="emmet-re-view__checkbox" /><i class="emmet-re-view__icon" data-icon="checkbox"></i>
+					<label for="emr-sync-scroll">Override vertical scroll</label>
 				</div>
 			</div>
 			<div class="emmet-re-view__panel-section">

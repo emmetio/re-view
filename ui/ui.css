@@ -6,19 +6,26 @@
 	position: fixed;
 	left: 0;
 	top: 0;
-	padding: 50px 0 100px 50px;
 	height: 100%;
 	width: 100%;
-	z-index: 9998;
-	white-space: nowrap;
-	overflow-x: auto;
-	overflow-y: hidden;
+	min-width: 900px;
+	z-index: 9999;
+	overflow: hidden;
 	background: #7f8c8d;
 	font-family: Lato, Helvetica, Arial, sans-serif;
+	font-size: 13px;
+}
 
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+.emmet-re-view__scroller {
+	position: absolute;
+	top: 0;
+	bottom: 4.5em;
+	left: 0;
+	right: 0;
+	padding: 50px 0;
+	overflow: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
 }
 
 .emmet-re-view__item {
@@ -26,6 +33,7 @@
 	display: inline-block;
 	width: 500px;
 	height: 100%;
+	/* margin: 0 50px; */
 	margin-right: 50px;
 	background: #fff;
 	-webkit-box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.5);
