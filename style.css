@@ -89,12 +89,17 @@ ul li {
 
 .preview .emmet-re-view {
 	position: relative;
-	padding: 50px 0 70px;
+	/* padding: 50px 0 70px; */
 	z-index: 1;
 }
 
 .preview .emmet-re-view__panel {
-	position: absolute;
+	display: none;
+}
+
+.preview .emmet-re-view__scroller {
+	bottom: 0;
+	padding-bottom: 70px;
 }
 
 .preview .emmet-re-view__item-ui-label {
