@@ -1,6 +1,6 @@
 {
 	"name" : "Emmet Re:View",
-	"version" : "1.0.0",
+	"version" : "1.0.1",
 	"description" : "Shows views with all responsive media-query breakpoints for current page",
 	"manifest_version": 2,
 	"permissions" : [
