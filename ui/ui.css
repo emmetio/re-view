@@ -14,6 +14,7 @@
 	background: #7f8c8d;
 	font-family: Lato, Helvetica, Arial, sans-serif;
 	font-size: 13px;
+	color: #2d3f4f;
 }
 
 .emmet-re-view__scroller {
@@ -216,4 +217,25 @@
 	font-family: Lato, Helvetica, Arial, sans-serif;
 	font-size: 1em;
 	font-weight: normal;
+}
+
+.emmet-re-view__error {
+	position: absolute;
+	width: 25em;
+	font-size: 2em;
+	left: 50%;
+	top: 50%;
+	display: none;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.emmet-re-view_error .emmet-re-view__error {
+	display: block;
+}
+
+.emmet-re-view_error .emmet-re-view__scroller {
+	display: none;
 }
