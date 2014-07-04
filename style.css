@@ -93,6 +93,7 @@ img {
 
 .preview .emmet-re-view {
 	position: relative;
+	overflow: visible;
 	/* padding: 50px 0 70px; */
 	z-index: 1;
 }
