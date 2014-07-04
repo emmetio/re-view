@@ -1,7 +1,7 @@
 {
 	"name" : "Emmet Re:View",
 	"version" : "1.0.0",
-	"description" : "Shows views with all media-query breakpoints for current page",
+	"description" : "Shows views with all responsive media-query breakpoints for current page",
 	"manifest_version": 2,
 	"permissions" : [
 		"activeTab",
@@ -13,7 +13,7 @@
 	"icons": {
 		"16": "16x16.png",
 		"48": "48x48.png",
-		"128": "128x128.png"
+		"128": "app-icon.png"
 	},
 	"browser_action": {
 		"default_title": "Emmet Re:View",

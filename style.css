@@ -39,6 +39,10 @@ ul li {
 	margin-bottom: 0.5em;
 }
 
+img {
+	border: 0;
+}
+
 .main-content {
 	padding: 0 20px;
 }
@@ -197,6 +201,48 @@ footer p {
 	font-style: italic;
 	padding-top: 1px;
 	padding-bottom: 9px;
+}
+
+.app-logo {
+	position: absolute;
+	left: 50px;
+	top: 14px;
+	z-index: 10000;
+	font-size: 13px;
+	opacity: 0.3;
+	display: none;
+
+	-webkit-transition: opacity 0.3s;
+	-moz-transition: opacity 0.3s;
+	-ms-transition: opacity 0.3s;
+	-o-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.app-logo:hover {
+	opacity: 1;
+}
+
+.is-app .app-logo {
+	display: block;
+}
+
+.app-logo a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.app-logo a:before {
+	content: '';
+	display: inline-block;
+	background: url(./lib/chrome/48x48.png);
+	width: 24px;
+	height: 24px;
+	margin-top: -4px;
+	margin-right: 10px;
+	vertical-align: middle;
+	-webkit-background-size: contain;
+	background-size: contain;
 }
 
 @media screen and (min-width: 500px) {
