@@ -3,13 +3,16 @@ node_js:
 - '0.10'
 env:
   global:
-  - secure: PbVqot8Sxfn+2nxkUvV8p1KRSWNACLvu3ec+eg5bYGAXbrx3Gx1FzfGh5jWmmD5E12f+FGM5RAyHUvKxq5xT6YQctkphfnmHUSYyyF+JYZGSy7S6czkiyTEKA/Cv5OC8lVispffNl2bDdLg/VUZxywqlxUymchjy2gFiI+Gev6A=
-  - secure: dzorcw29qIlRvCk0rUaf5uQfAgEqHSjYB6NcF10ZvgdjhFlQiVOhAeJSfeZDYf3/4bf/stPXDLgF/pgokMXaUr8WDRJyX3tNkWv8l9G8PKfstd0xdOvIDaw6JfKENUz29tQRWbCSW4rShtzFn4WHoae0Va24frNDB8RFGTOdzTA=
-  - secure: c2SqjZ96YdlBx1EzFxNyDKRtrcL7Rd+nZNH6sS8QsV2jx2m6/0ZH1TE+Z/4Xjj8aBKzVwbh3G0VxsbQpzzNZyY+0a5/zNeYMdcFx4SAWWk5BxxVCI+GuQLhAY5GAMKAEYEpfMmmj21a/MaXc6VXF51X6LPpo3/OChwY6JDlmeAw=
-script: "./node_modules/.bin/gulp"
+  - secure: UmeSAqP7p6o9Bdb6y5UHtu+Hbn+X+ZxD16HUO7v5U4csZnUQpWvA7YEjcIlNucdJ6zdipURAF6WY9XGd1D8VgW/kWzKJnUtamUTr+tBJdZ3CR91uuD93ycAlKu9SLctlpFGRx/01pryAZ3E1mBgVARMOmSEeLS1kDKL8ZCut9z0=
+  - secure: fzaUm/ByTY97Uk6ihtfvsJBcwgXD62IRQGplTTlvaFOZsrstcWQN77ZfOy9Kb/9kPaHDT8qLKopEgHrXFxLvCzfMuUotzKxBLTeaWnZkdZFpRx/9Ps0UIamGP5gEBKPvcT6Nljl+KSQfie0NBgJLqAhLUTQOwIcKqwiIxuTl9kA=
+  - secure: ZOttTKU5Rotw7fYkD8wvccdxgY0IDoeIkZ9+egecCrs6EUzNkCqV2Hros+28x9qT723MW38fq85QBzGB+lKRi6j37pUyhTwpj6KWEMoho7xD/r/LvTTcSWwFcSGClRhpt2wClazYPWtDemSzEsZe6BmYcqbunSFK2UUPFBdKWkk=
+addons:
+  ssh_known_hosts:
+  - 128.199.54.7
+script: ./node_modules/.bin/gulp
 branches:
   only:
   - master
 after_success:
-- sudo apt-get install sshpass
-- sshpass -p $DEPLOY_PASSWORD scp -oStrictHostKeyChecking=no -r ./out/web $DEPLOY_USER@128.199.54.7:$DEPLOY_PATH
+- sudo apt-get -y -qq install sshpass
+- rsync -arlptzO --delete --stats --rsh="sshpass -p $DEPLOY_PASSWORD ssh -l $DEPLOY_USER" ./out/web/ 128.199.54.7:$DEPLOY_DEST
