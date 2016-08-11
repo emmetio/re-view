@@ -2,6 +2,18 @@
 @import url(./icons.css);
 @import url(./panel.css);
 
+:root {
+	margin: 0 !important;
+	overflow-y: hidden;
+	padding: 0 !important;
+}
+
+body {
+	height: 100% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
 .emmet-re-view {
 	position: fixed;
 	left: 0;
